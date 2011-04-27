@@ -428,6 +428,13 @@ config MACH_SPADE
        help
          Support for the Qualcomm MSM7x30 Spade board.
 
+config PANEL_SELF_REFRESH
+       depends on MACH_SPADE
+       default n
+       bool "Panel Self-refresh"
+       help
+         Support for the board Spade Panel Self-refresh.
+
 config MACH_DYNASTY
        depends on ARCH_MSM7X30
        depends on !MSM_STACKED_MEMORY
@@ -486,10 +493,6 @@ config HTC_PWRSINK
 	depends on MSM_SMD
 	default y
 	bool "HTC Power Sink Driver"
-
-config HTC_POWER_COLLAPSE_MAGIC
-	default n
-	bool "Check Power Collapse State"
 
 config MSM_SPM
 	bool "Subsystem Power Manager"
