@@ -8,10 +8,12 @@
 
 #define __xg(x) ((volatile long *)(x))
 
-static inline void set_64bit(volatile u64 *ptr, u64 val)
+static inline void set_64bit(volatile unsigned long *ptr, unsigned long val)
 {
 	*ptr = val;
 }
+
+#define _set_64bit set_64bit
 
 /*
  * Note: no "lock" prefix even on SMP: xchg always implies lock anyway
