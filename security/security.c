@@ -386,7 +386,6 @@ int security_path_mkdir(struct path *path, struct dentry *dentry, int mode)
 		return 0;
 	return security_ops->path_mkdir(path, dentry, mode);
 }
-EXPORT_SYMBOL(security_path_mkdir);
 
 int security_path_rmdir(struct path *path, struct dentry *dentry)
 {
@@ -394,7 +393,6 @@ int security_path_rmdir(struct path *path, struct dentry *dentry)
 		return 0;
 	return security_ops->path_rmdir(path, dentry);
 }
-EXPORT_SYMBOL(security_path_rmdir);
 
 int security_path_unlink(struct path *path, struct dentry *dentry)
 {
@@ -402,7 +400,6 @@ int security_path_unlink(struct path *path, struct dentry *dentry)
 		return 0;
 	return security_ops->path_unlink(path, dentry);
 }
-EXPORT_SYMBOL(security_path_unlink);
 
 int security_path_symlink(struct path *path, struct dentry *dentry,
 			  const char *old_name)
@@ -411,7 +408,6 @@ int security_path_symlink(struct path *path, struct dentry *dentry,
 		return 0;
 	return security_ops->path_symlink(path, dentry, old_name);
 }
-EXPORT_SYMBOL(security_path_symlink);
 
 int security_path_link(struct dentry *old_dentry, struct path *new_dir,
 		       struct dentry *new_dentry)
@@ -420,7 +416,6 @@ int security_path_link(struct dentry *old_dentry, struct path *new_dir,
 		return 0;
 	return security_ops->path_link(old_dentry, new_dir, new_dentry);
 }
-EXPORT_SYMBOL(security_path_link);
 
 int security_path_rename(struct path *old_dir, struct dentry *old_dentry,
 			 struct path *new_dir, struct dentry *new_dentry)
@@ -431,7 +426,6 @@ int security_path_rename(struct path *old_dir, struct dentry *old_dentry,
 	return security_ops->path_rename(old_dir, old_dentry, new_dir,
 					 new_dentry);
 }
-EXPORT_SYMBOL(security_path_rename);
 
 int security_path_truncate(struct path *path, loff_t length,
 			   unsigned int time_attrs)
@@ -440,7 +434,6 @@ int security_path_truncate(struct path *path, loff_t length,
 		return 0;
 	return security_ops->path_truncate(path, length, time_attrs);
 }
-EXPORT_SYMBOL(security_path_truncate);
 #endif
 
 int security_inode_create(struct inode *dir, struct dentry *dentry, int mode)
@@ -512,7 +505,6 @@ int security_inode_readlink(struct dentry *dentry)
 		return 0;
 	return security_ops->inode_readlink(dentry);
 }
-EXPORT_SYMBOL(security_inode_readlink);
 
 int security_inode_follow_link(struct dentry *dentry, struct nameidata *nd)
 {
@@ -527,7 +519,6 @@ int security_inode_permission(struct inode *inode, int mask)
 		return 0;
 	return security_ops->inode_permission(inode, mask);
 }
-EXPORT_SYMBOL(security_inode_permission);
 
 int security_inode_setattr(struct dentry *dentry, struct iattr *attr)
 {
@@ -628,7 +619,6 @@ int security_file_permission(struct file *file, int mask)
 {
 	return security_ops->file_permission(file, mask);
 }
-EXPORT_SYMBOL(security_file_permission);
 
 int security_file_alloc(struct file *file)
 {
@@ -651,7 +641,6 @@ int security_file_mmap(struct file *file, unsigned long reqprot,
 {
 	return security_ops->file_mmap(file, reqprot, prot, flags, addr, addr_only);
 }
-EXPORT_SYMBOL(security_file_mmap);
 
 int security_file_mprotect(struct vm_area_struct *vma, unsigned long reqprot,
 			    unsigned long prot)
